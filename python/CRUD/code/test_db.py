@@ -11,4 +11,9 @@ myFirstRestaurant = Restaurant(name = "Pizza Palace")
 session.add(myFirstRestaurant)
 session.commit()
 
-print(session.query(Restaurant).all())
+#print(session.query(Restaurant).all())
+
+cheesepizza = MenuItem(name = "Cheese Pizze", course = "some course", price = "price", description = "sone discriptions", restaurant= Restaurant(name = "myFirstRestaurant"))
+session.add(cheesepizza)
+session.commit()
+print(session.query(MenuItem).all())
