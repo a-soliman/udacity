@@ -9,9 +9,20 @@ Base = declarative_base()
 
 class Restaurant(Base):
     __tablesname__ = 'restaurant'
+    name = Column(String(80), nullable = False)
+    id = Column(Integer, primary_key = True)
+
 
 class MenuItem(Base):
     __tablesname__ = 'menu_item'
+    name = Column(String(80), nullable = False)
+    id = Column(Integer, primary_key = True)
+    course = Column(String(80))
+    description = Column(String(250))
+    price = Column(String(8))
+    restaurant_id = Column(Integer, ForeignKey('restaurant.id'))
+
+    restaurant = relationship(Restaurant)
 
 
 
