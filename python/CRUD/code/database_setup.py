@@ -8,10 +8,10 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 class Restaurant(Base):
-    pass
+    __tablesname__ = 'restaurant'
 
 class MenuItem(Base):
-    pass
+    __tablesname__ = 'menu_item'
 
 
 
