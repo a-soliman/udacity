@@ -7,6 +7,12 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
+class Restaurant(Base):
+    pass
+
+class MenuItem(Base):
+    pass
+
 
 
 engine = create_engine('sqlite:///restaurantmenu.db')
